@@ -7,7 +7,7 @@ package ca.sheridancollege.project;
 
 /**
  *
- * @author teddy
+ * @author Timothy Quan
  */
 public abstract class Dealer {
     

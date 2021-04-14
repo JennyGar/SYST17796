@@ -7,7 +7,7 @@ package ca.sheridancollege.project;
 
 /**
  *
- * @author teddy
+ * @author Timothy Quan
  */
 public class Blackjack extends Game {
     
@@ -31,6 +31,14 @@ public class Blackjack extends Game {
     
     public void cashOut() {
         
+    }
+    
+    public boolean isAlreadyRegistered(BlackjackPlayer player) {
+        return getPlayers().contains(player);
+    }
+    
+    public void registerPlayer(BlackjackPlayer player) {
+        getPlayers().add(player);
     }
     
 }

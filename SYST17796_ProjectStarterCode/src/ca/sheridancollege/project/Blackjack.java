@@ -17,19 +17,8 @@ public class Blackjack extends Game {
         super(givenName);
     }
     
+    
     public void play() {
-        
-    }
-    
-    public void declareWinner() {
-        
-    }
-    
-    public void changeBet() {
-        
-    }
-    
-    public void cashOut() {
         
     }
     

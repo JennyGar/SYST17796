@@ -9,35 +9,23 @@ package ca.sheridancollege.project;
  *
  * @author Timothy Quan
  */
+public enum Chip {
 
-public class Chip {
+    FIVE_HUNDRED(500),
+    ONE_HUNDRED(100),
+    TWENTY_FIVE(25),
+    TEN(10),
+    FIVE(5),
+    ONE(1);
 
-    public enum Value {
-        ONE,
-        FIVE,
-        TEN,
-        TWENTY_FIVE,
-        ONE_HUNDRED,
-        FIVE_HUNDRED,
-        ONE_THOUSAND,
-        FIVE_THOUSAND
-    }
-    private final Value value;
+    private int value;
 
-    /**
-     *
-     * @param gVal
-     */
-    public Chip(Value gVal) {
-        value = gVal;
+    private Chip(int value) {
+        this.value = value;
     }
 
-    public Value getValue() {
-        return this.value;
+    public int getValue() {
+        return value;
     }
     
-    public String toString() {
-        return "Chip";
-    }
-
 }

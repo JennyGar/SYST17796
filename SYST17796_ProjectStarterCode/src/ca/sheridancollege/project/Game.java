@@ -52,12 +52,13 @@ public abstract class Game
      * on your game.
      */
     public abstract void play();
-    
-    /**
-     * When the game is over, use this method to declare and display a winning
-     * player.
-     */
-    public abstract void declareWinner();
+
+//    declareWinner() moved to BlackjackPlayer class because winner is indvidual-based rather than an overall winner.    
+//    /**
+//     * When the game is over, use this method to declare and display a winning
+//     * player.
+//     */
+//    public abstract void declareWinner();
 
    
     

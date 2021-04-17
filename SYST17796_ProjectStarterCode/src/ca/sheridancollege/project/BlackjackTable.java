@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author teddy
+ * @author Timothy Quan
  */
 public class BlackjackTable {
 

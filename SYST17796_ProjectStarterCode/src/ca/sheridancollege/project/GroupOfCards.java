@@ -24,6 +24,7 @@ public class GroupOfCards
     public GroupOfCards(int givenSize)
     {
         size = givenSize;
+        cards = new ArrayList<>(givenSize);
     }
     
     /**
@@ -35,6 +36,10 @@ public class GroupOfCards
         return cards;
     }
     
+    public void addCard(Card card) {
+        cards.add(card);
+    }
+        
     public void shuffle()
     {
         Collections.shuffle(cards);

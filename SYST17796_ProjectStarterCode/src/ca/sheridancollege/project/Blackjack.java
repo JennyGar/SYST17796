@@ -10,16 +10,13 @@ package ca.sheridancollege.project;
  * @author Timothy Quan
  */
 public class Blackjack extends Game {
-    
-    private Dealer dealer;
 
     public Blackjack(String givenName) {
         super(givenName);
     }
     
-    
     public void play() {
-        
+        Dealer dealer = Dealer.getInstance();
     }
     
     public boolean isAlreadyRegistered(BlackjackPlayer player) {

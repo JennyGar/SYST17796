@@ -10,13 +10,14 @@ import java.util.Collections;
 
 /**
  *
- * @author teddy
+ * @author Timothy Quan
  */
 public class BlackjackPlayer extends Player {
     
     private ArrayList <Chip> chips;
     private int timesPlayed = 0;
     private ArrayList <Chip> chipsBet;
+    private Hand hand;
     
     public BlackjackPlayer() {
         super("DefaultID");
@@ -28,7 +29,20 @@ public class BlackjackPlayer extends Player {
     
     public ArrayList <Chip> getChips() 
     {
-        return chips;
+        return this.chips;
+    }
+    
+    public int getTimesPlayed() {
+        return this.timesPlayed;
+    }
+    
+    public ArrayList <Chip> getChipsBet() 
+    {
+        return this.chipsBet;
+    }
+    
+    public Hand getHand() {
+        return this.hand;
     }
     
     public void play() {

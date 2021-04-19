@@ -53,7 +53,7 @@ public class Blackjack extends Game {
         addDealerCard();
     }
     
-    // adds a card from the deck ti the dealer's hand. 
+    // adds a card from the deck to the dealer's hand. 
     public void addDealerCard() {
         dealerHand.addCard(cardDeck.rCard());
     }

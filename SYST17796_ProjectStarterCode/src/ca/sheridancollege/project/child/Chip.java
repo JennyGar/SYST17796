@@ -6,7 +6,7 @@
 package ca.sheridancollege.project.child;
 
 /**
- *
+ * 
  * @author Timothy Quan
  */
 public enum Chip {

@@ -12,15 +12,8 @@ package ca.sheridancollege.project.parent;
  * @author dancye, 2018
  */
 public abstract class Card 
-{
-    public enum Suit {
-        
-    }
-    
-    public enum Value {
-      
-    }
-    
+
+{   
     @Override
     abstract public String toString();
        

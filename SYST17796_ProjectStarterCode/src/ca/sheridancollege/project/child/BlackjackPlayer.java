@@ -9,7 +9,8 @@ import ca.sheridancollege.project.parent.Player;
 import java.util.ArrayList;
 
 /**
- *
+ * Associates a deck, a hand, and chips to a single playerID.
+ * Keeps track of the associated chips and has methods to add or remove them. 
  * @author Timothy Quan
  */
 public class BlackjackPlayer extends Player {
@@ -23,28 +24,49 @@ public class BlackjackPlayer extends Player {
         super("DefaultID");
     }
     
+    /**
+     * constructor modeled off parent constructor. 
+     * @param name 
+     */
     public BlackjackPlayer(String name) {
         super(name);
     }
     
+    /**
+     * 
+     * @return chips arraylist
+     */
     public ArrayList <Chip> getChips() 
     {
         return this.chips;
     }
     
+    /**
+     * 
+     * @return timesplayed.
+     */
     public int getTimesPlayed() {
         return this.timesPlayed;
     }
     
+    /**
+     * 
+     * @return chipsbet arraylist.
+     */
     public ArrayList <Chip> getChipsBet() 
     {
         return this.chipsBet;
     }
     
+    /**
+     * 
+     * @return playerHand.
+     */
     public JavaHand getHand() {
         return this.playerHand;
     }
     
+    //checks games played, if no games have been played by player yet adds a fresh set of chips
     public void play() {
         if (this.timesPlayed == 0) {
             initializeChips();
@@ -54,11 +76,13 @@ public class BlackjackPlayer extends Player {
         
     }
     
+    //creates new blackjack hand
     public void initializeHand() {
         playerHand = new JavaHand(2);
         playerHand.DiscardHand();
     }
     
+    //creates new set of chips with set number of amounts for each value
     public void initializeChips() {
         chips = new ArrayList();
         chips.add(Chip.FIVE_HUNDRED);
@@ -79,6 +103,7 @@ public class BlackjackPlayer extends Player {
         }
     }
     
+    //prints owned chips (and values) to screen
     public void displayChips() {
         int[] chipCount = chipCount();
         
@@ -90,7 +115,10 @@ public class BlackjackPlayer extends Player {
         System.out.println(" and " + chipCount[5] + " $1 Chips");
         System.out.println("Total: $" + cashOut());
     }
-    
+    /**
+     * 
+     * @return array of a number count for each chip value. 
+     */
     public int[] chipCount() {
         int fiveHundredCount = 0;
         int oneHundredCount = 0;
@@ -116,7 +144,15 @@ public class BlackjackPlayer extends Player {
         int[] chipCount = new int[]{fiveHundredCount, oneHundredCount, twentyFiveCount,tenCount, fiveCount, oneCount};
         return chipCount;
     }
-    
+    /**
+     * takes in amount of chips for each type and adds them to their respective arrays to keep track
+     * @param fiveHundred
+     * @param oneHundred
+     * @param twentyFive
+     * @param ten
+     * @param five
+     * @param one 
+     */
     public void bet(int fiveHundred, int oneHundred, int twentyFive, int ten, int five, int one) {
         chipsBet = new ArrayList();
         for (int i = 0; i < fiveHundred; i++) {
@@ -139,6 +175,10 @@ public class BlackjackPlayer extends Player {
         }
     }
     
+    /**
+     * 
+     * @return numerical value of chips won after winning a game
+     */
     public int cashOut() {
         int winnings = 0;
         for (int i = 0; i < this.chips.size(); i++) {
@@ -147,6 +187,11 @@ public class BlackjackPlayer extends Player {
         return winnings;
     }
     
+    /**
+     * compares players to see if they are equal. 
+     * @param other
+     * @return 
+     */
     @Override
     public boolean equals(Object other) {
         if (this == other) {

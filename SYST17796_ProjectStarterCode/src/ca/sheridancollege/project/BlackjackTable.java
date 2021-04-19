@@ -10,7 +10,7 @@ import ca.sheridancollege.project.child.BlackjackPlayer;
 import java.util.Scanner;
 
 /**
- *
+ * Acts as an interactive UI for the player to use the BlackJack game. 
  * @author Timothy Quan
  */
 public class BlackjackTable {

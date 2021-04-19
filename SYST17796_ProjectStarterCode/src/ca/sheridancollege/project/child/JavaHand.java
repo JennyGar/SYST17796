@@ -9,15 +9,27 @@ import ca.sheridancollege.project.parent.Card;
 import ca.sheridancollege.project.parent.GroupOfCards;
 
 /**
- *
+ * Class intended for a small amount of cards, with functionality to add the value of all of the cards. 
  * @author Jennifer
  */
 public class JavaHand extends GroupOfCards {
 
+    
+    /**
+     * 
+     * @param givenSize 
+     * Constructor 
+     */
     public JavaHand(int givenSize) {
         super(givenSize);
     }
 
+    /**
+     * 
+     * @return sums up value of hand based on blackjack values. 
+     * Ace can be 1 or 11 depending on which one gets closer to 21 but does not cause the hand value to go over.
+     * Number of aces are counted, and added last to deal with variance possibilities.
+     */
     public int addCards() {
         int i = 0;
         int a = 0;
@@ -59,10 +71,15 @@ public class JavaHand extends GroupOfCards {
         return i;
         }
    
+    // removes all cards in hand - keeps the hand array to add cards to it.
+
     public void DiscardHand() {
         super.showCards().clear();
     }
-    
+    /**
+     * @return String listing the suit and value of each card in the hand.
+     * 
+     */
     @Override
     public String toString() {
         String printstuff = "";

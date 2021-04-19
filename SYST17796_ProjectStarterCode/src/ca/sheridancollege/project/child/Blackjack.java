@@ -54,7 +54,7 @@ public class Blackjack extends Game {
         do {
             for (int i = 0; i < this.getPlayers().size(); i++) {
                 BlackjackPlayer player = (BlackjackPlayer) this.getPlayers().get(i);
-                if (this.getHand().addCards() < player.getHand().addCards() && this.getHand().addCards() < 21) {
+                if (this.getHand().addCards() < player.getHand().addCards() && this.getHand().addCards() < 21 && player.getHand().addCards() <= 21) {
                     dealerContinue = true;
                     break;
                 } else if (this.getHand().addCards() >= player.getHand().addCards() || this.getHand().addCards() == 21) {

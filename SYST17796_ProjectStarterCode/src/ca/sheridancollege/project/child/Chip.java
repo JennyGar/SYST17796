@@ -20,10 +20,20 @@ public enum Chip {
 
     private int value;
 
+    /**
+     * Give chip enum a numeric value
+     *
+     * @param value the value of a chip  
+     */
     private Chip(int value) {
         this.value = value;
     }
 
+    /**
+     * Returns value of chip enum
+     *
+     * @return chip value 
+     */
     public int getValue() {
         return this.value;
     }

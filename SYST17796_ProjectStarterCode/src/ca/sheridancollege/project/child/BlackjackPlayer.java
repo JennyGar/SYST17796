@@ -33,7 +33,7 @@ public class BlackjackPlayer extends Player {
     }
     
     /**
-     * 
+     * Returns player's current chips
      * @return chips arraylist
      */
     public ArrayList <Chip> getChips() 
@@ -42,7 +42,7 @@ public class BlackjackPlayer extends Player {
     }
     
     /**
-     * 
+     * Return number of times played
      * @return timesplayed.
      */
     public int getTimesPlayed() {
@@ -50,7 +50,7 @@ public class BlackjackPlayer extends Player {
     }
     
     /**
-     * 
+     * Return chips of the player's bet
      * @return chipsbet arraylist.
      */
     public ArrayList <Chip> getChipsBet() 
@@ -59,14 +59,14 @@ public class BlackjackPlayer extends Player {
     }
     
     /**
-     * 
+     * Return player's hand
      * @return playerHand.
      */
     public JavaHand getHand() {
         return this.playerHand;
     }
     
-    //checks games played, if no games have been played by player yet adds a fresh set of chips
+    //checks games played, if no games have been played by player yet adds a fresh set of chips and displays the chips.
     public void play() {
         if (this.timesPlayed == 0) {
             initializeChips();
@@ -76,7 +76,7 @@ public class BlackjackPlayer extends Player {
         
     }
     
-    //creates new blackjack hand
+    //creates new blackjack hand for the player
     public void initializeHand() {
         playerHand = new JavaHand(2);
         playerHand.DiscardHand();
@@ -115,8 +115,9 @@ public class BlackjackPlayer extends Player {
         System.out.println(" and " + chipCount[5] + " $1 Chips");
         System.out.println("Total: $" + cashOut());
     }
+    
     /**
-     * 
+     * Counts the number of each type of chip.
      * @return array of a number count for each chip value. 
      */
     public int[] chipCount() {
@@ -144,14 +145,15 @@ public class BlackjackPlayer extends Player {
         int[] chipCount = new int[]{fiveHundredCount, oneHundredCount, twentyFiveCount,tenCount, fiveCount, oneCount};
         return chipCount;
     }
+    
     /**
-     * takes in amount of chips for each type and adds them to their respective arrays to keep track
-     * @param fiveHundred
-     * @param oneHundred
-     * @param twentyFive
-     * @param ten
-     * @param five
-     * @param one 
+     * takes user input to create an arraylist of chips that are bet by the player
+     * @param fiveHundred number of $500 chips bet
+     * @param oneHundred number of $100 chips bet
+     * @param twentyFive number of $25 chips bet
+     * @param ten number of $10 chips bet
+     * @param five number of $5 chips bet
+     * @param one number of $1 chips bet
      */
     public void bet(int fiveHundred, int oneHundred, int twentyFive, int ten, int five, int one) {
         chipsBet = new ArrayList();
@@ -176,8 +178,8 @@ public class BlackjackPlayer extends Player {
     }
     
     /**
-     * 
-     * @return numerical value of chips won after winning a game
+     * Returns winnings at end of round or game 
+     * @return numerical value of chips won after winning or losing a game
      */
     public int cashOut() {
         int winnings = 0;
@@ -188,8 +190,9 @@ public class BlackjackPlayer extends Player {
     }
     
     /**
-     * compares players to see if they are equal. 
-     * @param other
+     * compares players to see if they are equal based on the player ID.
+     * is used to determine if a player ID is unique.
+     * @param other the other player entered that is to be compared with this player
      * @return 
      */
     @Override

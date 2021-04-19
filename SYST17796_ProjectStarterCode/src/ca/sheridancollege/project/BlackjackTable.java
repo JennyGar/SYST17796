@@ -238,6 +238,7 @@ public class BlackjackTable {
                     if (playAgain.equalsIgnoreCase("n")) {
                         System.out.println(blackjack.getPlayers().get(i).getPlayerID() + ", you won $" + player.cashOut() + "!");
                         System.out.println("");
+                        System.out.println("Game has ended for " + blackjack.getPlayers().get(i).getPlayerID() + "!");
                         blackjack.getPlayers().remove(i);
                         i--;
                         numOfPlayers--;

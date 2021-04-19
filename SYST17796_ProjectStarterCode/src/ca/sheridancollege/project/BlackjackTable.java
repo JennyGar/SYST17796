@@ -5,8 +5,8 @@
  */
 package ca.sheridancollege.project;
 
-import ca.sheridancollege.ca.project.child.Blackjack;
-import ca.sheridancollege.ca.project.child.BlackjackPlayer;
+import ca.sheridancollege.project.child.Blackjack;
+import ca.sheridancollege.project.child.BlackjackPlayer;
 import java.util.Scanner;
 
 /**

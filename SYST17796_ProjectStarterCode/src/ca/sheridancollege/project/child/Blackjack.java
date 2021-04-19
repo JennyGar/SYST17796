@@ -24,15 +24,19 @@ public class Blackjack extends Game {
     public Blackjack(String givenName) {
         super(givenName);
     }
+    
     /**
-     * 
+     * Returns decks of cards used in the game.
+     *
      * @return Javadeck. 
      */
     public JavaDeck getJavaDeck() {
         return this.cardDeck;
     }
+    
     /**
-     * 
+     * Returns hand of the dealer.
+     *
      * @return dealerHand.
      */
      public JavaHand getHand() {
@@ -40,7 +44,7 @@ public class Blackjack extends Game {
     }
     
      
-    //initializes game by creating a deck, and adding a hand with a singular card for the dealer.
+    // initializes game by creating a deck, and adding a hand with a singular card for the dealer.
     public void play() {
         this.cardDeck = new JavaDeck();
         cardDeck.shuffle();
@@ -49,6 +53,7 @@ public class Blackjack extends Game {
         addDealerCard();
     }
     
+    // adds a card from the deck ti the dealer's hand. 
     public void addDealerCard() {
         dealerHand.addCard(cardDeck.rCard());
     }
@@ -61,6 +66,7 @@ public class Blackjack extends Game {
     public boolean isAlreadyRegistered(BlackjackPlayer player) {
         return getPlayers().contains(player);
     }
+    
     /**
      * takes player and adds it to players in the game. 
      * @param player 
@@ -69,7 +75,8 @@ public class Blackjack extends Game {
         getPlayers().add(player);
     }
     
-    //checks the value of the dealer hand, if the hand value is less than 21 and the player is continuing, dealer adds a card to dealer hand
+    // checks the value of the dealer hand, if the hand value is less than 21 and the player is continuing, dealer adds a card to dealer hand.
+    // stops when the value of the dealer hand is at 21 or at the the value of the player with the highest hand under 21.
     public void dealerTurn() {
         boolean dealerContinue = false;
         do {
@@ -92,7 +99,7 @@ public class Blackjack extends Game {
     }
     
     /**
-     * checks the value of both player hand and dealer hand and declares whether player won.
+     * checks the value of both player hand and dealer hand and declares whether player won or lost.
      * @param playerNum
      */
     public void declareWinner(int playerNum) {
@@ -119,8 +126,8 @@ public class Blackjack extends Game {
     }
     
     /**
-     * Gives player
-     * @param playerNum 
+     * Adds chips that the player bet to their current chips
+     * @param playerNum the index of the player in players ArrayList
      */
     public void winBet(int playerNum) {
         BlackjackPlayer player = (BlackjackPlayer) this.getPlayers().get(playerNum);
@@ -129,8 +136,8 @@ public class Blackjack extends Game {
     }
     
     /**
-     * 
-     * @param playerNum 
+     * Removes chips that the player bet to their current chips
+     * @param playerNum the index of the player in players ArrayList
      */
     public void loseBet(int playerNum) {
         BlackjackPlayer player = (BlackjackPlayer) this.getPlayers().get(playerNum);

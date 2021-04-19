@@ -19,11 +19,19 @@ public enum Chip {
     ONE(1);
 
     private int value;
-
+    
+    /**
+     * sets chip enumeration with numerical value
+     * @param 
+     */
     private Chip(int value) {
         this.value = value;
     }
-
+    
+    /**
+     * returns numerical chip value
+     * @return value
+     */
     public int getValue() {
         return this.value;
     }

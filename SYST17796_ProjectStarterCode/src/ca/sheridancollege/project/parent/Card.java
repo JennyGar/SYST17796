@@ -3,7 +3,7 @@
  * Students can modify and extend to implement their game.
  * Add your name as a modifier and the date!
  */
-package ca.sheridancollege.project;
+package ca.sheridancollege.project.parent;
 
 /**
  * A class to be used as the base Card class for the project. Must be general
@@ -13,14 +13,15 @@ package ca.sheridancollege.project;
  */
 public abstract class Card 
 {
-    //default modifier for child classes
+    public enum Suit {
+        
+    }
     
-    /**
-     * Students should implement this method for their specific children classes 
-     * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
-     */
+    public enum Value {
+      
+    }
     
     @Override
-    public abstract String toString();
-    
+    abstract public String toString();
+       
 }

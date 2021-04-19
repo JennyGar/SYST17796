@@ -3,8 +3,9 @@
  * Students can modify and extend to implement their game.
  * Add your name as a modifier and the date!
  */
-package ca.sheridancollege.project;
+package ca.sheridancollege.project.parent;
 
+import ca.sheridancollege.project.parent.Player;
 import java.util.ArrayList;
 
 /**
@@ -52,12 +53,12 @@ public abstract class Game
      * on your game.
      */
     public abstract void play();
-    
+  
     /**
      * When the game is over, use this method to declare and display a winning
      * player.
      */
-    public abstract void declareWinner();
+    public abstract void declareWinner(int i);
 
    
     

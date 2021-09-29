@@ -1,2 +1,2 @@
 # SYST17796
-Group Assignment for School
+Group project for SYST17796 Fundamentals of Software Design and Development. Simulates a game of Blackjack.
